@@ -19,7 +19,7 @@ int main(){
     int i, j;
     double temp;
 
-    cout << "first layer" << endl;
+    cout << "first layer output" << endl;
 
     double input[INPUT_NUM] = {1.0, 0.5};
     double weight_1[INPUT_NUM][FIRST]= { {0.1, 0.3, 0.5},{0.2, 0.4, 0.6} };
@@ -36,7 +36,7 @@ int main(){
         cout << layer_1[i] << endl;
         }
 
-    cout << "second layer" << endl;
+    cout << "second layer output" << endl;
 
     double weight_2[FIRST][SECOND]= { {0.1, 0.4},{0.2, 0.5}, {0.3, 0.6} };
     double bias_2[SECOND]= {0.1, 0.2};
@@ -52,7 +52,7 @@ int main(){
         cout << layer_2[i] << endl;
         }
 
-    cout << "output layer" << endl;
+    cout << "third layer output" << endl;
 
     double weight_3[SECOND][OUTPUT]= { {0.1, 0.3},{0.2, 0.4} };
     double bias_3[OUTPUT]= {0.1, 0.2};
