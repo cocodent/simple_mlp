@@ -69,7 +69,12 @@ int main(){
     }
 
     //train
-    cout << "OUTPUT" << endl;
+    cout << "XOR INPUT" << endl;
+    cout << " (0, 0)   (1, 0)   (0, 1)   (1, 1)" << endl;
+
+    cout << "-----------------------------------"  << endl;
+    cout << "XOR OUTPUT" << endl;
+    cout << "-----------------------------------"  << endl;
 
     for(l=0; l<EPOCH+1; l++){
       if(l%100000==0) {
@@ -108,33 +113,6 @@ int main(){
         }
       }
     }
-    
-    //predict
-    //input XOR
-    for(i=0; i<4; i++){
-      for(j=0; j<HIDDEN; j++){
-        temp = 0;
-        for(k=0; k<INPUT; k++){
-          temp += train_x[i][k] * w1[k][j];
-        }
-      o1[i][j] = sigmoid(temp);
-      }
-    }
-    //hidden layer
-    for(i=0; i<4; i++){
-        temp = 0;
-        for(k=0; k<HIDDEN; k++){
-          temp += o1[i][k] * w2[k];
-        }
-      output[i] = sigmoid(temp);
-      }
-
-  //result
-    cout << "RESULT" << endl;
-    for(i=0; i<4; i++){
-      cout << train_x[i][0] << ' ' << train_x[i][1] << " -> ";
-      cout << output[i] << endl;
-      }
 
   return 0;
 }
